@@ -1,4 +1,6 @@
+import 'package:biblioteca_search_module/biblioteca_search_module.dart';
 import 'package:clean_architecture_utils/events.dart';
+import 'package:clean_architecture_utils/modular.dart';
 
 import 'app_widget_store.dart';
 
@@ -28,6 +30,9 @@ class EventController {
         break;
       case DefaultEvents.hideAppLoaderEvent:
         _appWidgetStore?.hideLoaderApp();
+        break;
+      case SearchModuleEvents.searchOpenDetails:
+        Modular.to.pushNamed('/details');
         break;
 
       default:

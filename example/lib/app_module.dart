@@ -7,6 +7,7 @@ import 'package:clean_architecture_utils/events.dart';
 import 'package:example/app_widget_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import 'details_page.dart';
 import 'event_controller.dart';
 import 'trackers.dart';
 
@@ -30,6 +31,11 @@ class AppModule extends Module {
         ModuleRoute(
           Modular.initialRoute,
           module: SearchModule(),
+          transition: TransitionType.rightToLeft,
+        ),
+        ChildRoute(
+          '/details',
+          child: (context, args) => const DetailsPage(),
           transition: TransitionType.rightToLeft,
         ),
       ];

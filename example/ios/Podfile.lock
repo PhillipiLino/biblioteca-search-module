@@ -1,5 +1,7 @@
 PODS:
   - Flutter (1.0.0)
+  - integration_test (0.0.1):
+    - Flutter
   - LaunchDarkly (6.1.0):
     - LaunchDarkly/Core (= 6.1.0)
   - LaunchDarkly/Core (6.1.0):
@@ -17,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - launchdarkly_flutter_client_sdk (from `.symlinks/plugins/launchdarkly_flutter_client_sdk/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
@@ -29,6 +32,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  integration_test:
+    :path: ".symlinks/plugins/integration_test/ios"
   launchdarkly_flutter_client_sdk:
     :path: ".symlinks/plugins/launchdarkly_flutter_client_sdk/ios"
   path_provider_foundation:
@@ -38,6 +43,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  integration_test: a1e7d09bd98eca2fc37aefd79d4f41ad37bdbbe5
   LaunchDarkly: 44e1728319bd7693a2a619561a8237187406b920
   launchdarkly_flutter_client_sdk: 7e3a96fc687464a76492a1d681c8c109d89c3161
   LDSwiftEventSource: 1ac1b0986a07c5fe4f2c94d87f1d41f4de6ae727

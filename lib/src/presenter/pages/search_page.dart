@@ -1,4 +1,5 @@
 import 'package:biblioteca_components/biblioteca_components.dart';
+import 'package:biblioteca_search_module/src/presenter/keys.dart';
 import 'package:clean_architecture_utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:pagination_view/pagination_view.dart';
@@ -46,6 +47,7 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
     if (books.isEmpty && _searchController.text.isEmpty) {
       return const Expanded(
         child: EmptyList(
+          key: Key(SearchKeys.viewEmptyList),
           textColor: Colors.white,
           image: Image(image: MainIllustrations.emptySearch),
           title: '',
@@ -57,6 +59,7 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
     if (books.isEmpty) {
       return const Expanded(
         child: EmptyList(
+          key: Key(SearchKeys.viewNotFoundBooks),
           textColor: Colors.white,
           image: Image(image: MainIllustrations.termNotFound),
           title: 'Nenhum livro ou autor encontrado',
@@ -68,17 +71,24 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
 
     return Expanded(
       child: PaginationView<SearchBookEntity>(
+        key: const Key(SearchKeys.listViewBooks),
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         physics: const AlwaysScrollableScrollPhysics(
-            parent: BouncingScrollPhysics()),
-        preloadedItems: const [],
-        itemBuilder:
-            (BuildContext context, SearchBookEntity book, int position) =>
-                SearchBookItem(
-          book,
-          position,
-          onTap: () => _openDetails(book),
+          parent: BouncingScrollPhysics(),
         ),
+        preloadedItems: const [],
+        itemBuilder: (
+          BuildContext context,
+          SearchBookEntity book,
+          int position,
+        ) {
+          return SearchBookItem(
+            book,
+            position,
+            onTap: () => _openDetails(book),
+            key: Key(SearchKeys.listBook(position)),
+          );
+        },
         pageFetch: (position) {
           return store.paginate(_searchController.text, position);
         },
@@ -111,6 +121,7 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: SearchBar(
+                key: const Key(SearchKeys.txtSearchBar),
                 hint: 'Digite um livro ou autor',
                 controller: _searchController,
                 onChanged: store.search,
