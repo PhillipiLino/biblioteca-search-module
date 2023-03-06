@@ -1,7 +1,4 @@
-library biblioteca_search_module;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/domain/entities/search_book_entity.dart';
+export 'src/presenter/events.dart';
+export 'src/presenter/localizations/module_localizations_delegate.dart';
+export 'src/search_module.dart';

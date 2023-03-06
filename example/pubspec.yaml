@@ -30,6 +30,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  biblioteca_search_module:
+    path: ../
+  
+  biblioteca_network_sdk:
+    git:
+      url: https://github.com/PhillipiLino/biblioteca-network-sdk.git
+      ref: main
+
+  clean_architecture_utils:
+    git:
+      url: https://github.com/PhillipiLino/flutter-clean-architecture-utils.git
+      ref: main
+
+  commons_tools_sdk:
+    git:
+      url: https://github.com/PhillipiLino/flutter-commons-tools-sdk
+      ref: main
 
 
   # The following adds the Cupertino Icons font to your application.
