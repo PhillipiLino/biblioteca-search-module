@@ -10,7 +10,7 @@ class SearchModule extends Module {
   @override
   final List<Bind> binds = [
     Bind((inject) => GoogleService(inject.get())),
-    Bind((inject) => SearchStore(inject.get(), inject.get())),
+    Bind((inject) => SearchPageStore(inject.get(), inject.get())),
     Bind((inject) => SearchBooksUsecase(inject.get())),
     Bind((inject) => SearchBooksRepositoryImplementation(inject.get())),
   ];

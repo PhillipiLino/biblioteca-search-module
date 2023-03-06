@@ -23,7 +23,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: "20ca2031698ae5cf14c00c61742ad996846e0c63"
+      resolved-ref: "82b843c6d245a95be00ec512dd255d09d4a50485"
       url: "https://github.com/PhillipiLino/biblioteca-network-sdk.git"
     source: git
     version: "0.0.1"

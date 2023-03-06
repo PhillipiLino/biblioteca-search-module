@@ -14,7 +14,7 @@ class SearchPage extends StatefulWidget {
   SearchPageState createState() => SearchPageState();
 }
 
-class SearchPageState extends MainPageState<SearchPage, SearchStore> {
+class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
   final TextEditingController _searchController = TextEditingController();
 
   @override

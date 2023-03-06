@@ -7,11 +7,11 @@ import 'package:commons_tools_sdk/commons_tools_sdk.dart';
 import '../../domain/entities/search_params.dart';
 import '../../domain/usecases/search_books_usecase.dart';
 
-class SearchStore extends MainStore<List<SearchBookEntity>> {
+class SearchPageStore extends MainStore<List<SearchBookEntity>> {
   final SearchBooksUsecase usecase;
   final _debouncer = Debouncer(milliseconds: 800);
 
-  SearchStore(
+  SearchPageStore(
     this.usecase,
     EventBus? eventBus,
   ) : super(eventBus, []);
