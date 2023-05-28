@@ -1,4 +1,4 @@
-import 'package:biblioteca_components/biblioteca_components.dart';
+import 'package:biblioteca_components/biblioteca_components.dart' as components;
 import 'package:biblioteca_search_module/src/presenter/keys.dart';
 import 'package:clean_architecture_utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +32,9 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
 
   Widget _onError(BuildContext context, Object? error) {
     return const Expanded(
-      child: EmptyList(
+      child: components.EmptyList(
         textColor: Colors.white,
-        image: Image(image: MainIllustrations.error),
+        image: Image(image: components.MainIllustrations.error),
         title: 'EITA!',
         message: 'Eita, ocorreu um erro. Tente novamente',
       ),
@@ -46,10 +46,10 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
 
     if (books.isEmpty && _searchController.text.isEmpty) {
       return const Expanded(
-        child: EmptyList(
+        child: components.EmptyList(
           key: Key(SearchKeys.viewEmptyList),
           textColor: Colors.white,
-          image: Image(image: MainIllustrations.emptySearch),
+          image: Image(image: components.MainIllustrations.emptySearch),
           title: '',
           message: '',
         ),
@@ -58,10 +58,10 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
 
     if (books.isEmpty) {
       return const Expanded(
-        child: EmptyList(
+        child: components.EmptyList(
           key: Key(SearchKeys.viewNotFoundBooks),
           textColor: Colors.white,
-          image: Image(image: MainIllustrations.termNotFound),
+          image: Image(image: components.MainIllustrations.termNotFound),
           title: 'Nenhum livro ou autor encontrado',
           message:
               'Desculpe, mas dessa vez não encontramos livro ou autor com o termo buscado. Pode ser sua chance de escrever esse livro!',
@@ -113,14 +113,14 @@ class SearchPageState extends MainPageState<SearchPage, SearchPageStore> {
     hideKeyboard() => FocusManager.instance.primaryFocus?.unfocus();
 
     return Scaffold(
-      appBar: CustomAppBar(title: 'Busca', pageContext: context),
+      appBar: components.CustomAppBar(title: 'Busca', pageContext: context),
       body: GestureDetector(
         onTap: hideKeyboard,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: SearchBar(
+              child: components.SearchBar(
                 key: const Key(SearchKeys.txtSearchBar),
                 hint: 'Digite um livro ou autor',
                 controller: _searchController,
